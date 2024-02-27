@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+10.times do
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  User.create(name: name, email: email)
+end
+
+20.times do
+  Room.create(
+    number: Faker::Number.number(digits: 3),
+    description: Faker::Lorem.sentence,
+    price: Faker::Commerce.price(range: 50..200.0),
+    status: ["available", "booked"].sample
+  )
+end
