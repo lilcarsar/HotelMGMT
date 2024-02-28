@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Rails</h1>
+
+<div id="rails">
+  <% @rails.each do |rail| %>
+    <%= render rail %>
+    <p>
+      <%= link_to "Show this rail", rail %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New rail", new_rail_path %>

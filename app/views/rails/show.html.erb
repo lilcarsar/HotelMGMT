@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @rail %>
+
+<div>
+  <%= link_to "Edit this rail", edit_rail_path(@rail) %> |
+  <%= link_to "Back to rails", rails_path %>
+
+  <%= button_to "Destroy this rail", @rail, method: :delete %>
+</div>

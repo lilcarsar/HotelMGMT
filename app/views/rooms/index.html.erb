@@ -1,0 +1,19 @@
+<h1>Listing Rooms</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Status</th>
+  </tr>
+
+  <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.number %></td>
+      <td><%= room.description %></td>
+      <td><%= number_to_currency(room.price) %></td>
+      <td><%= room.status %></td>
+    </tr>
+  <% end %>
+</table>
