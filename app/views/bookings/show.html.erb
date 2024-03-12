@@ -1,2 +1,33 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Booking Details</h1>
+
+<div>
+  <strong>Booking ID:</strong>
+  <%= @booking.id %>
+</div>
+
+<div>
+  <strong>Start Date:</strong>
+  <%= @booking.start_date.strftime('%B %d, %Y %H:%M') %>
+</div>
+
+<div>
+  <strong>End Date:</strong>
+  <%= @booking.end_date.strftime('%B %d, %Y %H:%M') %>
+</div>
+
+
+<div>
+  <strong>Room:</strong>
+  <%= link_to @booking.room.number, @booking.room %>
+</div>
+
+<div>
+  <strong>User:</strong>
+  <%= link_to @booking.user.name, @booking.user %>
+</div>
+
+
+|
+<%= link_to 'Back to Bookings', bookings_path %>

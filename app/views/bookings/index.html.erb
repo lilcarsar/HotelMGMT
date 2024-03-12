@@ -17,17 +17,17 @@
   <% @bookings.each do |booking| %>
     <tr>
       <td><%= booking.id %></td>
-      <td><%= booking.user.full_name %></td> <!-- assuming user has a full_name method -->
-      <td><%= booking.room.number %></td> <!-- assuming room has a number attribute -->
+      <td><%= booking.user.name %></td>
+      <td><%= booking.room.number %></td>
       <td><%= booking.start_date %></td>
       <td><%= booking.end_date %></td>
-      <td><%= booking.status %></td>
       <td><%= link_to 'Show', booking %></td>
-      <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-      <td><%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= button_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
     </tr>
   <% end %>
   </tbody>
 </table>
+
 
 <%= link_to 'New Booking', new_booking_path %>
