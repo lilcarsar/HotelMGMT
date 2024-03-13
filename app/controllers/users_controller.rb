@@ -19,7 +19,15 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  def destroy
+    @user = User.find_by_id(params[:id])
+    if @user
+      @user.destroy
+      redirect_to users_path, notice: "User was successfully deleted."
+    else
+      redirect_to users_path, notice: "User not found."
+    end
+  end
   def edit
     @user = User.find(params[:id])
   end
